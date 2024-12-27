@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+@font-face{
+    src: url('./nimbus-sans/NimbusSanL-Bol.otf');
+    font-family:'Nimbus Sans', sans-serif;
+    font-weight: 800;
+}
+@font-face{
+    src: url('./nimbus-sans/NimbusSanL-Reg.otf');
+    font-family:'Nimbus Sans', sans-serif;
+    font-weight: 500;
+}
+
+:root {
+    --ui-curve: cubic-bezier(.33,1.09,.55,.97);
+
+    /* light theme */
+    --ivory: hsla(65, 43%, 95%, 1);
+    --mauve: hsla(269, 84%, 85%, 1);
+    --amethyst: hsla(247, 25%, 55%, 1);
+    --olive: hsla(80, 19%,10%, 1);
+    --vanilla: hsla(58, 59%, 85%, 1);
+    --theme1: hsla(270, 2%, 21%, 1);
+    --theme2: hsla(26, 100%, 94%, 1);
+    --theme3: hsla(73, 93%, 48%, 1);
+    --theme4: hsla(355, 71%, 51%, 1);
+    --theme5: hsla(253, 81%, 58%, 1);
+    --primary: var(--olive);
+    --secondary: var(--theme2);   
+    --tertiary: var(--theme5);
+
+    @media (prefers-color-scheme: dark) {
+        /* dark theme */
+        --ivory: hsla(65, 43%, 95%, 1);
+        --mauve: hsla(269, 84%, 85%, 1);
+        --amethyst: hsla(247, 25%, 55%, 1);
+        --olive: hsla(80, 19%,10%, 1);
+        --vanilla: hsla(58, 59%, 85%, 1);
+        --theme1: hsla(270, 2%, 21%, 1);
+        --theme2: hsla(26, 100%, 94%, 1);
+        --theme3: hsla(73, 93%, 48%, 1);
+        --theme4: hsla(355, 71%, 51%, 1);
+        --theme5: hsla(253, 81%, 58%, 1);
+        
+        --tertiary: var(--theme5);
+        --primary: var(--theme2);
+        --secondary: var(--olive);  
+    }
+
+    --answer-border-padding: .2rem;
+    
+}
+
+body {
+    background: var(--secondary);
+}
+html, body, * {
+    scroll-behavior: smooth;
+    box-sizing: border-box;
+    font-family:'Nimbus Sans', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0px;
+    padding: 0px;
+    width: auto;
+    height: auto;
+}

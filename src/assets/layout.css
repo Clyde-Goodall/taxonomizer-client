@@ -1,0 +1,188 @@
+:root {
+    --phone-sm: 420px,
+    --phone: 767px,
+    --tablet: 768px,
+    --tablet-lg: 1024px,
+    --desktop: 1025px,
+    --desktop-lg: 1600px
+}
+
+/* animations */
+.v-enter-active,
+.v-leave-active {
+    transition: opacity 0.5s ease;
+}
+
+.v-enter-from,
+.v-leave-to {
+    opacity: 0;
+}
+
+@keyframes spinner {
+    0% {
+        transform: rotate(0);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* utility classes for alignment instead of rewriting it everywhere */
+.flex {
+    display: flex;
+}
+.items-center {
+    align-items: center;
+}
+.content-center {
+    justify-content: center;
+}
+.row {
+    flex-direction: row;
+}
+.col {
+    flex-direction: column;
+}
+
+.gap-sm {
+    gap: 2rem;
+}
+.gap-md {
+    gap: 5rem;
+}
+.gap-lg {
+    gap: 10rem;
+}
+.margins-sm {
+    margin: 0rem 2rem;
+}
+.margins-md {
+    margin: 0rem 4rem;
+}
+.margins-lg {
+    margin: 0rem 8rem;
+}
+
+h1 {
+    font-family: "Nimbus Sans", sans-serif;
+    font-weight: 300;
+    font-size: 3rem;
+}
+
+/* loader that shows before image rounds populate */
+.load-spinner {
+    transition: visibility 1s ease-out;
+    animation: spinner 3s infinite linear;
+    border: 10px solid white;
+    border-radius: 2px;
+    width: 10vw;
+    height: 10vw;
+
+    .spinner-inner {
+        border-radius: 2px;
+        border: 10px solid white;
+        animation: spinner 3s infinite alternate-reverse; 
+        width: 5vw;
+        height: 5vw;
+    }
+}
+
+/* in-game styles */
+.blur-background {
+    background-size: 120%;
+    transition:background 2s var(--ui-curve);
+    background: black;
+    width: 100vw;
+    height: 100vh;
+    filter: blur(100px);
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: -1;
+    img {
+        background: black;
+    }
+}
+
+/* non-blurred image for each round */
+.image-container {
+    width: 100%;
+    height: 100vh;
+
+    .random-image-display { 
+        height: 80vh;
+        img {
+            border: 10px solid rgba(200,200,200, .1);
+            border-radius: 20px;
+            transition: all .3s var(--ui-curve);
+            max-width: 80vw;
+            max-height: 80%;
+            box-shadow: 0px 30px 140px 40px rgba(0,0,0,0.6);
+            /* opacity: 1; */
+        }
+
+        .image-alternative {
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            color: white;
+            font-size: 50pt;
+            width: 100vw;
+            height: 100%;
+        }
+    } 
+}
+
+/* container for answer text box */
+.answer-input-ui {
+    border-radius: 10px;
+    transition: all .2s var(--ui-curve);
+    border: .6rem solid rgba(0,0,0, .3);
+    box-sizing: border-box;
+
+    .answer-input-ui-inner {
+        box-sizing: border-box;
+        /* padding: .4rem; */
+        /* width: clamp(450px, 50%, 1000px); */
+        border-radius: 12px;
+        background: rgba(255,255,255, .2);
+        backdrop-filter: blur(20px);
+    }
+}
+
+.answer-input-ui:focus-within {
+    border: .6rem solid var(--theme3);
+}
+
+.hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.ui-hidden {
+    opacity: 0;
+    visibility: hidden;
+    bottom: -30px;
+    transform: scale(.8);
+}
+
+@media screen and (max-width: 1024px) {
+    .answer-input-ui {
+        border-radius: 0px;
+        padding: .2rem;
+        border: none;
+        width: 100vw;
+        position: absolute;
+        bottom: 0px;
+        left: 0px;
+        position: fixed;
+        .answer-input-ui-inner {
+            padding: 0rem 1rem;
+            border-radius: 0px;
+            width: 100%;
+        }
+    }
+    .answer-input-ui:focus-within {
+        border: none;
+    }
+}
