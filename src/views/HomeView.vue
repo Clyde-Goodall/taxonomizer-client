@@ -13,6 +13,7 @@
     <div class="wide-card margins-md invert">
       <!-- <tree class="tree-visual" alt="phylogenetic tree icon"/> -->
       <h1>What is {{ store.metaInfo.name }}?</h1>
+      <!-- idk wuteva -->
     </div>
   </section>
 </template>
