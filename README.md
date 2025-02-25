@@ -1,6 +1,6 @@
-# music-mapper-vue
+# Taxonomizer Client
 
-This template should help get you started developing with Vue 3 in Vite.
+Taxon guessing-game using iNaturalist and the NIH ranked lineage database.
 
 ## Recommended IDE Setup
 
